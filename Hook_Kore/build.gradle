@@ -1,0 +1,14 @@
+group 'Hook_Kore'
+
+dependencies {
+    compileOnly "com.golfing8:kore:1.0-SNAPSHOT"
+    compileOnly "com.golfing8:stacking:1.0-SNAPSHOT"
+    compileOnly "org.spigotmc:v1_8_R3-Taco:latest"
+    compileOnly project(":API")
+    compileOnly parent
+}
+
+if (project.hasProperty('hook.compile_kore') &&
+        !Boolean.valueOf(project.findProperty("hook.compile_kore").toString())) {
+    project.tasks.all { task -> task.enabled = false }
+}

@@ -3,12 +3,14 @@
 gradle.properties
 
 # Ignore Gradle build output directory
-build
+build/
 
 # Ignore intellij files
-.idea
+.idea/
 *.iml
 
 # Ignore output generated files
-target
-out
+target/
+out/
+
+libs/

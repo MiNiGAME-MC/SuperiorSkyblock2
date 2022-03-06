@@ -421,6 +421,8 @@ public final class ProvidersHandler extends AbstractHandler implements Providers
                 (auto || configSpawnersProvider.equalsIgnoreCase("RoseStacker"))) {
             spawnersProvider = createInstance("SpawnersProvider_RoseStacker");
             listenToSpawnerChanges = false;
+        } else if (Bukkit.getPluginManager().isPluginEnabled("SkyblockKore")) {
+            spawnersProvider = createInstance("SpawnersProvider_Kore");
         }
 
         spawnersProvider.ifPresent(this::setSpawnersProvider);
